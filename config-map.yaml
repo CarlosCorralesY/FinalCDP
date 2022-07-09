@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+data:
+  FLASK_APP: app.py
+  MYSQL_ROOT_USER: root
+  MYSQL_ROOT_PASSWORD: caramelito123 #clave
+  MYSQL_ROOT_HOST: '%' #"%"
+  MYSQL_ROOT_PORT: "3306"
+  MYSQL_ROOT_DB: bdnew 
+  FLASK_APP_PORT: "8282"

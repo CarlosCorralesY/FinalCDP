@@ -1,0 +1,20 @@
+
+docker run --name mysql -e MYSQL_ROOT_PASSWORD=caramelito123 -d mysql:latest
+
+
+
+kubectl exec k8s-mysql -it -- bash
+mysql --user=root --password=$MYSQL_ROOT_PASSWORD
+
+create database dbnew;
+USE dbnew;
+
+CREATE TABLE users (id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,name VARCHAR(50), lastname VARCHAR(50),password VARCHAR(20));
+CREATE TABLE notas (id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,title VARCHAR(150),body VARCHAR(100), id_user INT);
+
+INSERT INTO users (name, lastname, password)VALUES ('Carlos', 'Corrales', '12345');
+INSERT INTO notas (name, lastname, password)VALUES ('Juan', 'Perez', '12346');
+INSERT INTO notas (title, body, id_user) VALUES ('Harry', 'Mi primer libro', 1);
+INSERT INTO notas (title, body, id_user) VALUES ('Jhon', 'Actor favorito', 2);
+
+exit hasta salir
